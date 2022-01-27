@@ -1,18 +1,52 @@
+h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant', serif; }
+
+.title { font-size: 5rem; line-height: 6rem; font-weight: 700; }
+.title span { color: #FF8126; }
+
+.subtitle { font-size: 2.6rem; font-weight: 300; line-height: 3.9rem; }
+
+.button { background: #FF8126; padding: 1rem 3.6rem; color: #FFffff; font-weight: 500; font-size: 1.8rem; line-height: 2.7rem; border: none; border-radius: .5rem; }
+
 * { -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0; margin: 0; }
 
-html { background: #fff; font-size: 10px; font-family: 'Poppins', sans-serif; color: #1f1f1f; background: #eee; }
+html { background: #FFffff; font-size: 10px; font-family: 'Poppins', sans-serif; color: #1f1f1f; background: #eee; }
 
-.header { background: #fff; display: -webkit-box; display: -ms-flexbox; display: flex; max-width: 128rem; margin: 0 auto; padding: 2rem 5.5rem; }
+.header { background: #FFffff; display: -webkit-box; display: -ms-flexbox; display: flex; max-width: 128rem; margin: 0 auto; padding: 2rem 5.5rem; }
 .header__logo { -webkit-box-flex: 2; -ms-flex: 2; flex: 2; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: start; }
-.header__nav { -webkit-box-flex: 9; -ms-flex: 9; flex: 9; background: inherit; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.header__nav { -webkit-box-flex: 9; -ms-flex: 9; flex: 9; background: inherit; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; z-index: 1; }
 .header__nav li { list-style: none; }
-.header__nav .nav { display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
-.header__nav .nav a { padding: 0.5rem; display: block; white-space: nowrap; }
-.header__nav .nav__item { background: #fff; position: relative; min-width: 10rem; -webkit-transition: .5s; transition: .5s; }
-.header__nav .nav__item:hover .nav__drop { display: block; }
+.header__nav .nav { display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; position: relative; }
+.header__nav .nav a { padding: 1rem; display: block; color: #1f1f1f; white-space: nowrap; font-size: 1.5rem; font-weight: 500; line-height: 2.2rem; }
+.header__nav .nav__item { background: #FFffff; position: relative; width: 13rem; -webkit-transition: .5s; transition: .5s; }
+.header__nav .nav__item:hover .nav__drop { -webkit-transform: scale(1, 1); transform: scale(1, 1); }
 .header__nav .nav__item:hover { background: #FF8126; }
-.header__nav .nav__drop { display: none; position: absolute; }
+.header__nav .nav__drop { -webkit-transition: .5s; transition: .5s; -webkit-transform: scale(1, 0); transform: scale(1, 0); -webkit-transform-origin: top center; transform-origin: top center; position: absolute; }
 .header__tools { -webkit-box-flex: 2; -ms-flex: 2; flex: 2; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
 .header__tools .tool { width: 6rem; height: 6rem; border: 1px solid #bfbfbf; border-radius: 50%; -webkit-transition: .5s; transition: .5s; cursor: pointer; }
 .header__tools .tool__icon { width: 100%; height: 100%; -o-object-position: center center; object-position: center center; -o-object-fit: none; object-fit: none; }
 .header__tools .tool:hover { background: #FF8126; }
+
+.baner { max-width: 128rem; margin: 0 auto; position: relative; z-index: 0; }
+.baner__item { display: block; }
+.baner .baner-image { width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: center right; object-position: center right; }
+.baner .baner__text { position: absolute; top: 25%; left: 5.5rem; }
+.baner .baner__text .baner__title { margin-bottom: .5rem; }
+.baner .baner__text .baner__subtitle { margin-bottom: 4rem; }
+
+.cards { max-width: 128rem; height: auto; margin: 0 auto; position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; text-align: center; background: #FFffff; }
+.cards__title { margin-top: 8rem; margin-bottom: 4rem; }
+.cards .cards__list { padding: 0; margin: 0; width: 100%; list-style: none; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: .1rem; }
+.cards .card { overflow: hidden; position: relative; margin: 1.5rem; border-radius: 2rem; background: rgba(0, 0, 0, 0.15); height: 33rem; width: 27rem; overflow: hidden; -webkit-box-shadow: 0px 0px 10px 0px #00000026; box-shadow: 0px 0px 10px 0px #00000026; }
+.cards .card .card__image-wrapper { display: block; position: absolute; top: 0; left: 0; }
+.cards .card .card__image-wrapper .card-image { width: 100%; height: 100%; -o-object-position: top center; object-position: top center; -o-object-fit: fill; object-fit: fill; }
+.cards .card .card__product { padding-top: 65%; font-weight: 500; font-size: 1.8em; line-height: 2.7rem; margin-bottom: 0.5rem; }
+.cards .card .card__cost { color: #FF8126; font-weight: 600; font-size: 2.4rem; line-height: 3.6rem; margin-bottom: 1.4rem; }
+.cards .card .card__cost del { color: #656565; font-weight: 400; font-size: 1.8rem; line-height: 2.7rem; }
+
+@media screen and (max-width: 1100px) { .header { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse; }
+  .header__logo { position: absolute; top: 2rem; left: 1rem; }
+  .header__logo .logo { width: 7rem; height: auto; }
+  .header__tools { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  .header__nav .nav { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  .baner .baner__text { top: 5%; }
+  .baner .baner__text .title { font-size: 4.5rem; text-shadow: 0px 0px 10px #FFffff; } }

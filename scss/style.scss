@@ -1,6 +1,33 @@
 // font-family: 'Cormorant', serif;
 // font-family: 'Poppins', sans-serif;
 $color-background: #FF8126;
+$color-anotherText: #FFffff;
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Cormorant', serif;
+}
+.title {
+    font-size: 5rem;
+    line-height: 6rem;
+    font-weight: 700;
+    span{
+        color: $color-background;
+    }
+}
+.subtitle {
+    font-size: 2.6rem;
+    font-weight: 300;
+    line-height: 3.9rem;
+}
+.button {
+    background: $color-background;
+    padding: 1rem 3.6rem;
+    color: $color-anotherText;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    border: none;
+    border-radius: .5rem;
+}
 
 *{
     box-sizing: border-box;
@@ -8,18 +35,19 @@ $color-background: #FF8126;
     margin: 0;
 }
 html{
-    background: #fff;
+    background: $color-anotherText;
     font-size: 10px;
     font-family: 'Poppins', sans-serif;
     color: #1f1f1f;
     background: #eee;
 }
 .header {
-    background: #fff;
+    background: $color-anotherText;
     display: flex;
     max-width: 128rem;
     margin: 0 auto;
     padding: 2rem 5.5rem;
+ 
     &__logo {
         flex: 2;
         display: flex;
@@ -30,6 +58,7 @@ html{
         background: inherit;
         display: flex;
         align-items: center;
+        z-index: 1;
         li{
         list-style: none;
         }
@@ -37,25 +66,35 @@ html{
             display: flex;
             width: 100%;
             justify-content: space-evenly;
+            position: relative;
+            // perspective: 1000;
             a{
-                padding: 0.5rem;
+                padding: 1rem;
                 display: block;
+                color: #1f1f1f;
                 white-space: nowrap;
+                font-size: 1.5rem;
+                font-weight: 500;
+                line-height: 2.2rem
+
             }
             &__item{
-                background: #fff;
+                background: $color-anotherText;
                 position: relative;
-                min-width: 10rem;
+                width: 13rem;
                 transition: .5s;
                 &:hover .nav__drop{
-                    display: block;
+                    transform: scale(1,1);
                 }
                 &:hover{
                     background: $color-background;
                 }
             }
             &__drop{
-                display: none;
+                transition: .5s;
+                transform: scale(1,0);
+                transform-origin: top center;
+ 
                 position: absolute;
             }
         }
@@ -84,6 +123,106 @@ html{
         }
     }
 }
+// ----------------------------baner
+.baner {
+    max-width: 128rem;
+    // min-height: 40rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+    &__item{
+        display: block;
+    }
+    .baner-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center right;
+    }
+    .baner__text {
+        position: absolute;
+        top: 25%;
+        left: 5.5rem;
+        .baner__title {
+            margin-bottom: .5rem;
+        }
+
+        .baner__subtitle {
+            margin-bottom: 4rem;
+        }
+    }   
+}
+// -------------------------------------cards
+
+.cards {
+    max-width: 128rem;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: $color-anotherText;
+    &__title{
+        margin-top: 8rem ;
+        margin-bottom: 4rem;
+    }
+        .cards__list {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                list-style: none;
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: wrap;  
+                margin: .1rem;
+        }
+        .card {
+            overflow: hidden;
+            position: relative;
+            margin: 1.5rem;
+            border-radius: 2rem;
+            background: rgba(0, 0, 0, 0.15);
+            height: 33rem;
+            width: 27rem;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px 0px #00000026;
+            .card__image-wrapper {
+                // display: none;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                .card-image {
+                    width: 100%;
+                    height: 100%;
+                    object-position: top center;
+                    object-fit: fill;
+                }
+            }
+            .card__product {
+                padding-top:65%;
+                font-weight: 500;
+                font-size: 1.8em;
+                line-height: 2.7rem;
+                margin-bottom: 0.5rem;
+            }
+            .card__cost {
+                color: $color-background;
+                font-weight: 600;
+                font-size: 2.4rem;
+                line-height: 3.6rem;
+                margin-bottom: 1.4rem;
+                    del{
+                        color:#656565;
+                        font-weight: 400;
+                        font-size: 1.8rem;
+                        line-height: 2.7rem;
+                    }
+
+            }
+        }
+}
 
 
 
@@ -99,6 +238,42 @@ html{
 
 
 
+// --------------------------------mediaQuery
 
+@media screen and(max-width: 1100px) {
+    .header{
+        flex-direction:column-reverse;
+        &__logo{
+            position: absolute;
+            top: 2rem;left: 1rem;
+            .logo{
+                width: 7rem;
+                height: auto;
+            }
+        }
+        &__tools{
+            justify-content: center;
 
+        }
+        &__nav{
+            .nav{
+                justify-content: center;
+            }
+        }
+    }
+    .baner{
+        .baner__text{
+            top: 5%;
+            .title{
+                font-size: 4.5rem;
+                text-shadow:0px 0px 10px $color-anotherText;
+
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 550px) {
+        
+}
 
